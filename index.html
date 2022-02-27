@@ -34,15 +34,13 @@
 
         <!-- Search start  -->
         <section class="max-w-5xl p-6 mx-auto bg-white shadow-xl rounded-xl">
-            <form class="flex mb-0 space-x-4">
+            <div class="flex mb-0 space-x-4">
                 <div class="flex-1">
-                    <label class="sr-only" for="search"> Address </label>
-
-                    <input class="w-full h-12 text-sm border-gray-100 rounded-lg" id="search" placeholder="Search for a postcode" type="text" />
+                    <input id="search-field" class="w-full h-12 text-sm border-gray-100 rounded-lg px-3" placeholder="Search for a postcode" type="text" />
                 </div>
 
                 <div>
-                    <button class="inline-flex items-center justify-center w-12 h-12 text-gray-600 bg-gray-100 rounded-lg" type="submit">
+                    <button onclick="getLocation()" class="inline-flex items-center justify-center w-12 h-12 text-gray-600 bg-gray-100 rounded-lg">
                         <span class="sr-only">Submit</span>
 
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"
@@ -52,19 +50,19 @@
                         </svg>
                     </button>
                 </div>
-            </form>
+            </div>
         </section>
         <!-- Search End  -->
 
         <!-- Weather section start  -->
-        <section class="max-w-3xl mx-auto">
+        <section id="weather-container" class="max-w-3xl mx-auto">
             <div class="relative block p-8 overflow-hidden border border-gray-100 rounded-lg mt-5" href="">
                 <span class="absolute inset-x-0 bottom-0 h-2  bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"></span>
 
                 <div class="justify-between items-center sm:flex">
                     <div>
                         <h3 class="text-3xl font-bold text-gray-900">
-                            Dhaka
+                            City: Dhaka
                         </h3>
                         <p class="mt-1 text-lg font-medium text-gray-600">Today | July 20</p>
                     </div>
