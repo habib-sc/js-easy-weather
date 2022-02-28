@@ -27,7 +27,7 @@
                 Easy Weather Forcast.
             </h1>
             <p class="max-w-xl mx-auto mt-6 text-lg text-center mb-12">
-                Search by your City Name for getting weather forcast.
+                Search by your City Name or Location for getting weather forcast.
             </p>
         </div>
         <!-- Heading End  -->
@@ -54,46 +54,16 @@
         </section>
         <!-- Search End  -->
 
+        <!-- spinnner start  -->
+        <section id="spinner" class="max-w-3xl mx-auto">
+            <div class="flex justify-center my-14">
+                <img src="./images/loader.gif" width="100" alt="">
+            </div>
+        </section>
+        <!-- spinner end  -->
         <!-- Weather section start  -->
         <section id="weather-container" class="max-w-3xl mx-auto">
-            <div class="relative block p-8 overflow-hidden border border-gray-100 rounded-lg mt-5" href="">
-                <span class="absolute inset-x-0 bottom-0 h-2  bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"></span>
 
-                <div class="justify-between items-center sm:flex">
-                    <div>
-                        <h4 class="text-2xl font-bold text-gray-900">
-                            Dhaka
-                        </h4>
-                        <p class="mt-1 text-lg font-medium text-gray-600">BD</p>
-                    </div>
-
-                    <div class="flex-shrink-0 hidden ml-3 sm:block">
-                        <p class="mt-1 text-lg font-medium text-gray-600">
-                            Today <span class="text-xl"></span>
-                        </p>
-                        <p class="mt-1 text-lg font-medium text-gray-600">
-                            Temperature <span class="text-xl">32º</span> - <span class="text-xl">32º</span>
-                        </p>
-                    </div>
-
-                    <div class="flex-shrink-0 hidden ml-3 sm:block">
-                        <p class="mt-1 text-lg font-medium text-gray-600">
-                            Currently <span class="text-xl">32º</span>
-                        </p>
-                        <p class="mt-1 text-lg font-medium text-gray-600">
-                            Feels like <span class="text-xl">32º</span>
-                        </p>
-
-                    </div>
-
-                    <div class="flex-shrink-0 hidden ml-3 sm:block">
-                        <img class="object-cover w-16 h-16 rounded-lg shadow-sm" src="./images/sun.png" alt="Weather image" />
-                        <p class="mt-1 text-lg font-medium text-gray-600 text-center mt-2">Sunny</p>
-
-                    </div>
-
-                </div>
-            </div>
         </section>
         <!-- Weather section end  -->
 

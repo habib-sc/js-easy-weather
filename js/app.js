@@ -1,3 +1,4 @@
+// Location getting function 
 const getLocation = () => {
     // clearing search result  before start search
     document.getElementById('weather-container').textContent = '';
@@ -10,6 +11,8 @@ const getLocation = () => {
         return;
     }
 
+    spinnerToggle('block');
+
     // Fetching location API 
     const locationApiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${searchText}&limit=5&appid=6894a6943ffac86b0dcf7a9083863dbe`;
 
@@ -18,6 +21,7 @@ const getLocation = () => {
         .then(dataset => getWeather(dataset));
 }
 
+// Weather getting function 
 const getWeather = cities => {
     cities.forEach(city => {
         const cityName = city.name;
@@ -32,9 +36,9 @@ const getWeather = cities => {
     })
 }
 
-
+// Weather display function 
 const displayWeather = (weather, cityInfo) => {
-    // Process and adding resutl 
+    // Process and adding result 
     const weatherIconUrl = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
     const weatherContainer = document.getElementById('weather-container');
     const div = document.createElement('div');
@@ -81,7 +85,12 @@ const displayWeather = (weather, cityInfo) => {
     </div>
     `;
     weatherContainer.appendChild(div);
+    spinnerToggle('none');
     console.log(weather);
 }
 
+// kelvin to celcius function 
 const kelToCell = kelvin => (kelvin - 273.15).toFixed(2);
+
+// Spinner toggle funciton 
+const spinnerToggle = displayProperty => document.getElementById("spinner").style.display = displayProperty;
