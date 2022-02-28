@@ -14,7 +14,7 @@ const getLocation = () => {
     spinnerToggle('block');
 
     // Fetching location API 
-    const locationApiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${searchText}&limit=5&appid=6894a6943ffac86b0dcf7a9083863dbe`;
+    const locationApiUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${searchText}&limit=5&appid=6894a6943ffac86b0dcf7a9083863dbe`;
 
     fetch(locationApiUrl)
         .then(response => response.json())
@@ -27,7 +27,7 @@ const getWeather = cities => {
         const cityName = city.name;
         const cityState = city.state;
         const cityInfo = { cityName, cityState };
-        const weatherApiUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&appid=6894a6943ffac86b0dcf7a9083863dbe`;
+        const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&appid=6894a6943ffac86b0dcf7a9083863dbe`;
 
         // Fetching weather 
         fetch(weatherApiUrl)
@@ -39,7 +39,7 @@ const getWeather = cities => {
 // Weather display function 
 const displayWeather = (weather, cityInfo) => {
     // Process and adding result 
-    const weatherIconUrl = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
+    const weatherIconUrl = `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
     const weatherContainer = document.getElementById('weather-container');
     const div = document.createElement('div');
     div.innerHTML = `
