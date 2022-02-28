@@ -52,7 +52,7 @@ const displayWeather = (weather, cityInfo) => {
                     Today <span class="text-xl"></span>
                 </p>
                 <p class="mt-1 text-lg font-medium text-gray-600">
-                    Temperature <span class="text-xl">32º</span> - <span class="text-xl">32º</span>
+                    Temperature <span class="text-xl">${kelToCell(weather.main.temp_min)}º</span> / <span class="text-xl">${kelToCell(weather.main.temp_max)}º</span>
                 </p>
             </div>
 
@@ -78,3 +78,5 @@ const displayWeather = (weather, cityInfo) => {
     weatherContainer.appendChild(div);
     console.log(weather);
 }
+
+const kelToCell = kelvin => (kelvin - 273.15).toFixed(2);
