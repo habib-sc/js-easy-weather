@@ -15,17 +15,20 @@ const getLocation = () => {
 
 const getWeather = cities => {
     cities.forEach(city => {
+        const cityName = city.name;
+        const cityState = city.state;
+        const cityInfo = { cityName, cityState };
         const weatherApiUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&appid=6894a6943ffac86b0dcf7a9083863dbe`;
 
         // Fetching weather 
         fetch(weatherApiUrl)
             .then(response => response.json())
-            .then(dataset => displayWeather(dataset));
+            .then(dataset => displayWeather(dataset, cityInfo));
     })
 }
 
 
-const displayWeather = weather => {
+const displayWeather = (weather, cityInfo) => {
     // Process and adding resutl 
     const weatherContainer = document.getElementById('weather-container');
     const div = document.createElement('div');
@@ -35,10 +38,13 @@ const displayWeather = weather => {
 
         <div class="justify-between items-center sm:flex">
             <div>
-                <h4 class="text-2xl font-bold text-gray-900">
-                    Dhaka
+                <h4 class="text-2xl font-bold text-gray-600">
+                    ${cityInfo.cityName}
                 </h4>
-                <p class="mt-1 text-lg font-medium text-gray-600">BD</p>
+                <p class="mt-1 text-lg font-medium text-gray-600">
+                ${cityInfo.cityState}, 
+                <span class="text-xl text-gray-900">${weather.sys.country} </span>
+                </p>
             </div>
 
             <div class="flex-shrink-0 hidden ml-3 sm:block">
